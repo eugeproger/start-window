@@ -1,0 +1,8 @@
+@font-face {
+    font-family: 'Lobster';
+    src: url('Lobster-Regular.ttf');
+}
+
+.text {
+    -fx-font-family: "Lobster";
+}
