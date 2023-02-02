@@ -33,6 +33,7 @@ public class Authorization {
 
     @FXML
     void initialize() {
+
         sign_up_button.setOnAction(event -> {
             sign_up_button.getScene().getWindow().hide();
 
@@ -52,6 +53,20 @@ public class Authorization {
             stage.showAndWait();
         });
 
+        sing_in_button.setOnAction(event -> {
+            String loginText = login_field.getText().trim();
+            String passwordText = password_field.getText().trim();
+
+            if(!loginText.equals("") && !passwordText.equals("")) {
+                loginUser(loginText, passwordText);
+            } else {
+                System.out.println("Login or password is empty");
+            }
+        });
+
+    }
+
+    private void loginUser(String loginText, String passwordText) {
     }
 
 }
