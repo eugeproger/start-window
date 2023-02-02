@@ -33,24 +33,24 @@ public class Authorization {
 
     @FXML
     void initialize() {
-//        sign_up_button.setOnAction(event -> {
-//            sign_up_button.getScene().getWindow().hide();
-//
-//            FXMLLoader fxmlLoader = new FXMLLoader();
-//            fxmlLoader.setLocation(getClass().getResource(
-//                    "/com/itproger/itprogerjavafxapp/views/registration.fxml"
-//            ));
-//            try {
-//                fxmlLoader.load();
-//            } catch (IOException e) {
-//                throw new RuntimeException(e);
-//            }
-//
-//            Parent root = fxmlLoader.getRoot();
-//            Stage stage = new Stage();
-//            stage.setScene(new Scene(root));
-//            stage.showAndWait();
-//        });
+        sign_up_button.setOnAction(event -> {
+            sign_up_button.getScene().getWindow().hide();
+
+            FXMLLoader fxmlLoader = new FXMLLoader();
+            fxmlLoader.setLocation(getClass().getResource(
+                    "/com/itproger/itprogerjavafxapp/views/registration.fxml"
+            ));
+            try {
+                fxmlLoader.load();
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
+
+            Parent root = fxmlLoader.getRoot();
+            Stage stage = new Stage();
+            stage.setScene(new Scene(root));
+            stage.showAndWait();
+        });
 
     }
 
