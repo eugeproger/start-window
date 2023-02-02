@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="700.0" style="-fx-background-color: #2E3348;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.itproger.itprogerjavafxapp.controllers.Home">
+    <children>
+        <AnchorPane fx:id="image_button_home" layoutY="97.0" prefHeight="303.0" prefWidth="700.0" style="-fx-background-color: #fafafa;">
+            <children>
+                <Label layoutX="276.0" layoutY="14.0" prefHeight="68.0" prefWidth="150.0" text="Hi world!" textFill="#757575">
+                    <font>
+                        <Font name="Script MT Bold" size="36.0" />
+                    </font>
+                </Label>
+                <ImageView fitHeight="118.0" fitWidth="119.0" layoutX="291.0" layoutY="93.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@../../../../assets/home.png" />
+                    </image>
+                </ImageView>
+            </children></AnchorPane>
+        <Label layoutX="260.0" layoutY="14.0" prefHeight="43.0" prefWidth="180.0" text="itProger" textFill="WHITE">
+            <font>
+                <Font name="Script MT Bold" size="56.0" />
+            </font></Label>
+    </children>
+</AnchorPane>

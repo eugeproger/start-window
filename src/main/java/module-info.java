@@ -5,4 +5,6 @@ module com.itproger.itprogerjavafxapp {
 
     opens com.itproger.itprogerjavafxapp to javafx.fxml;
     exports com.itproger.itprogerjavafxapp;
+    exports com.itproger.itprogerjavafxapp.controllers;
+    opens com.itproger.itprogerjavafxapp.controllers to javafx.fxml;
 }
