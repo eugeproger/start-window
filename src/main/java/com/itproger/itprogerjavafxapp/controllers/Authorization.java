@@ -1,10 +1,15 @@
 package com.itproger.itprogerjavafxapp.controllers;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
+import javafx.stage.Stage;
 
 public class Authorization {
 
@@ -28,10 +33,24 @@ public class Authorization {
 
     @FXML
     void initialize() {
-        sing_in_button.setOnAction(event ->
-        {
-            System.out.println("You pressed button \"Sing in\"");
-        });
+//        sign_up_button.setOnAction(event -> {
+//            sign_up_button.getScene().getWindow().hide();
+//
+//            FXMLLoader fxmlLoader = new FXMLLoader();
+//            fxmlLoader.setLocation(getClass().getResource(
+//                    "/com/itproger/itprogerjavafxapp/views/registration.fxml"
+//            ));
+//            try {
+//                fxmlLoader.load();
+//            } catch (IOException e) {
+//                throw new RuntimeException(e);
+//            }
+//
+//            Parent root = fxmlLoader.getRoot();
+//            Stage stage = new Stage();
+//            stage.setScene(new Scene(root));
+//            stage.showAndWait();
+//        });
 
     }
 
