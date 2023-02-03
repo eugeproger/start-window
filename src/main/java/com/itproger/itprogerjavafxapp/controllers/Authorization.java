@@ -41,22 +41,7 @@ public class Authorization {
     void initialize() {
 
         sign_up_button.setOnAction(event -> {
-            sign_up_button.getScene().getWindow().hide();
-
-            FXMLLoader fxmlLoader = new FXMLLoader();
-            fxmlLoader.setLocation(getClass().getResource(
-                    "/com/itproger/itprogerjavafxapp/views/registration.fxml"
-            ));
-            try {
-                fxmlLoader.load();
-            } catch (IOException e) {
-                throw new RuntimeException(e);
-            }
-
-            Parent root = fxmlLoader.getRoot();
-            Stage stage = new Stage();
-            stage.setScene(new Scene(root));
-            stage.showAndWait();
+            openScene("/com/itproger/itprogerjavafxapp/views/registration.fxml");
         });
 
         sing_in_button.setOnAction(event -> {
@@ -92,6 +77,7 @@ public class Authorization {
 
         if (counter >= 1) {
             System.out.println("Success!");
+            openScene("/com/itproger/itprogerjavafxapp/views/home.fxml");
         } else {
             Shake userField = new Shake(login_field);
             Shake passwordField = new Shake(password_field);
@@ -99,5 +85,22 @@ public class Authorization {
             userField.playAnimation();
             passwordField.playAnimation();
         }
+    }
+
+    public void openScene(String window) {
+        sign_up_button.getScene().getWindow().hide();
+
+        FXMLLoader fxmlLoader = new FXMLLoader();
+        fxmlLoader.setLocation(getClass().getResource(window));
+        try {
+            fxmlLoader.load();
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+
+        Parent root = fxmlLoader.getRoot();
+        Stage stage = new Stage();
+        stage.setScene(new Scene(root));
+        stage.showAndWait();
     }
 }
