@@ -1,4 +1,4 @@
-package com.itproger.itprogerjavafxapp;
+package com.itproger.itprogerjavafxapp.simple_data;
 
 public class User {
 
@@ -16,6 +16,10 @@ public class User {
         this.password = password;
         this.location = location;
         this.gender = gender;
+    }
+
+    public User() {
+
     }
 
     public String getFirstName() {

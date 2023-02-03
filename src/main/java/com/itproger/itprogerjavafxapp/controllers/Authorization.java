@@ -2,7 +2,12 @@ package com.itproger.itprogerjavafxapp.controllers;
 
 import java.io.IOException;
 import java.net.URL;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ResourceBundle;
+
+import com.itproger.itprogerjavafxapp.database.DatabaseHandler;
+import com.itproger.itprogerjavafxapp.simple_data.User;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -55,10 +60,10 @@ public class Authorization {
 
         sing_in_button.setOnAction(event -> {
             String loginText = login_field.getText().trim();
-            String passwordText = password_field.getText().trim();
+            String loginPassword = password_field.getText().trim();
 
-            if(!loginText.equals("") && !passwordText.equals("")) {
-                loginUser(loginText, passwordText);
+            if (!loginText.equals("") && !loginPassword.equals("")) {
+                loginUser(loginText, loginPassword);
             } else {
                 System.out.println("Login or password is empty");
             }
@@ -66,7 +71,31 @@ public class Authorization {
 
     }
 
-    private void loginUser(String loginText, String passwordText) {
+    private void loginUser(String loginText, String loginPassword) {
+        DatabaseHandler databaseHandler = new DatabaseHandler();
+        User user = new User();
+        user.setUserName(loginText);
+        user.setPassword(loginPassword);
+        ResultSet resultSet = databaseHandler.getUser(user);
+
+        int counter = 0;
+        
+        while (true) {
+            try {
+                if (!resultSet.next()) break;
+            } catch (SQLException e) {
+                throw new RuntimeException(e);
+            }
+            counter++;
+        }
+
+        if (counter >= 1) {
+            System.out.println("Success!");
+        } else {
+            System.out.println("User is not exist");
+        }
+            
+
     }
 
 }
