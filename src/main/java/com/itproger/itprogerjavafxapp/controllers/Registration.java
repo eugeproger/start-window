@@ -2,6 +2,8 @@ package com.itproger.itprogerjavafxapp.controllers;
 
 import java.net.URL;
 import java.util.ResourceBundle;
+
+import com.itproger.itprogerjavafxapp.database.DatabaseHandler;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.CheckBox;
@@ -41,6 +43,17 @@ public class Registration {
 
     @FXML
     void initialize() {
+        DatabaseHandler databaseHandler = new DatabaseHandler();
+
+        sing_up_button.setOnAction(event -> {
+            databaseHandler.singUpUser(
+                    name_field.getText(),
+                    surname_field.getText(),
+                    login_field.getText(),
+                    password_field.getText(),
+                    country_field.getText(),
+                    "Male");
+        });
     }
 
 }
