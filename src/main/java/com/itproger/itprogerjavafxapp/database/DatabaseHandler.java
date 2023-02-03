@@ -1,11 +1,8 @@
 package com.itproger.itprogerjavafxapp.database;
 
-import com.itproger.itprogerjavafxapp.User;
+import com.itproger.itprogerjavafxapp.simple_data.User;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.PreparedStatement;
-import java.sql.SQLException;
+import java.sql.*;
 
 public class DatabaseHandler extends Configuration {
 
@@ -50,5 +47,31 @@ public class DatabaseHandler extends Configuration {
         } catch (ClassNotFoundException e) {
             throw new RuntimeException(e);
         }
+    }
+
+    public ResultSet getUser(User user) {
+        ResultSet resultSet = null;
+
+        String select = "SELECT * FROM " +
+                Constant.USERS_TABLE +
+                " WHERE " +
+                Constant.USER_USER_NAME +
+                "=? AND " +
+                Constant.USER_PASSWORD + "=?";
+
+        try {
+            PreparedStatement preparedStatement = getDatabaseConnection().prepareStatement(select);
+            preparedStatement.setString(1, user.getUserName());
+            preparedStatement.setString(2, user.getPassword());
+
+            resultSet = preparedStatement.executeQuery();
+
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        } catch (ClassNotFoundException e) {
+            throw new RuntimeException(e);
+        }
+
+        return resultSet;
     }
 }

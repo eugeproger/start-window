@@ -3,7 +3,7 @@ package com.itproger.itprogerjavafxapp.controllers;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-import com.itproger.itprogerjavafxapp.User;
+import com.itproger.itprogerjavafxapp.simple_data.User;
 import com.itproger.itprogerjavafxapp.database.DatabaseHandler;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
