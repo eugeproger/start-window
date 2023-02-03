@@ -6,6 +6,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ResourceBundle;
 
+import com.itproger.itprogerjavafxapp.animations.Shake;
 import com.itproger.itprogerjavafxapp.database.DatabaseHandler;
 import com.itproger.itprogerjavafxapp.simple_data.User;
 import javafx.fxml.FXML;
@@ -92,10 +93,11 @@ public class Authorization {
         if (counter >= 1) {
             System.out.println("Success!");
         } else {
-            System.out.println("User is not exist");
+            Shake userField = new Shake(login_field);
+            Shake passwordField = new Shake(password_field);
+
+            userField.playAnimation();
+            passwordField.playAnimation();
         }
-            
-
     }
-
 }
